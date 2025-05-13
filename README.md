@@ -46,7 +46,13 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 
 ## 版本说明
 
-
+### 2025.5.12  网速测试V5.0.1：
+   - JS版适配最新官方的OPENWRT。
+   - 新增外网Ookla speedtest.net网速测试，测速更精准，测试完提供测试图片更直观。
+   - 内网iperf3吞吐测速，提供实时日志显示，更方便。
+   - 内网Homebox网页测速，启用服务，即可使用，同页面操作更方便。
+   - speedtest-cli版本注册需要删除原来系统自带的，不然可能会冲突。
+   
 ### 2023.3.2  网速测试V2.1.3：
    - 修复测速Speedtest看不到测试报名问题。
    - 重新调试IPERF3测试页面代码，解决某些主题显示不优雅的问题。
@@ -75,7 +81,8 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 ### 下载源码：
  
     # 下载源码
-	
+    
+    rm -rf  ./feedspackages/net/speedtest-cli   #删除原来老版本
     git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
     make menuconfig
 	
@@ -98,9 +105,9 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 ## 源码说明
 
 - 源码来源和依赖:
-- luci-app-netspeedtest：https://github.com/sirpdboy/netspeedtest
-- speedtest-web：https://github.com/ZeaKyX/speedtest-web
-- speedtest-cl：https://github.com/sivel/speedtest-cli
+- luci-app-netspeedtest：https://github.com/sirpdboy/luci-app-netspeedtest
+- homebox：https://github.com/hay-kot/homebox
+- speedtest-cli: https://github.com/sbwml/openwrt_pkgs
 
 - 你可以随意使用其中的源码，但请注明出处。
 
@@ -116,11 +123,6 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 
 ![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest4.jpg)
 
-
-
-## 使用与授权相关说明
- 
-- 本人开源的所有源码，任何引用需注明本处出处，如需修改二次发布必告之本人，未经许可不得做于任何商用用途。
 
 
 # My other project
