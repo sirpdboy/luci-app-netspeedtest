@@ -33,7 +33,7 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 ## 功能说明
 - 内网网页版测速插件 ：基于speedtest-web网页版，启用后再点start进行测速。网页版启动后程序会驻留内存不测速建议不启用服务。
 - 内网iperf3吞吐测试 ，服务端路由器如果没有安装请先安装此iperf3插件。
-- 外网测速使用speedtest.net测速内核，基于speedtest-cli,需要有python3才能执行。
+- 外网测速使用speedtest.net测速内核，基于speedtest-cli,取消原来老python3了。
 - 特定服务器的端口延迟测速，是测试指定服务器的端口的延迟情况。
 
 ## iperf3吞吐测试注意事项
@@ -42,11 +42,17 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 - 客户端运行，国内端下载中有“iperf3测速客户端”，运行它输入服务器IP即可。
   国外原版，需要手动进入 CMD命令模式，再输入命令：iperf3.exe -c 服务器IP 
 - 网络测速iperf3客户端下载地址：https://sipdboy.lanzoui.com/b01c3esih 密码:cpd6
-- 需要依赖： python3 iperf3 speedtest-web
+- 需要依赖： speedtest-cli
 
 ## 版本说明
 
-### 2025.5.12  网速测试V5.0.1：
+
+### 2025.5.13  网速测试V5.0.2：
+   - 统一日志，Iperf3,Homebox和speedtest-cli统一显示于日志中。
+   - 修复speedtest-cli显示等问题。
+   - 主打一个简单方便好用！
+     
+### 2025.5.10  网速测试V5.0.1：
    - JS版适配最新官方的OPENWRT。
    - 新增外网Ookla speedtest.net网速测试，测速更精准，测试完提供测试图片更直观。
    - 内网iperf3吞吐测速，提供实时日志显示，更方便。
@@ -83,7 +89,7 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
     # 下载源码
     
     rm -rf  ./feedspackages/net/speedtest-cli   #删除原来老版本
-    git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+    git clone https://github.com/sirpdboy/luci-app-netspeedtest package/netspeedtest
     make menuconfig
 	
  ``` 
@@ -117,29 +123,37 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 
 ![screenshots](./演示.gif)
 
-![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest1.jpg)
+![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest1.png)
 
-![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest2.jpg)
+![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest2.png)
 
-![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest3.jpg)
+![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest3.png)
 
-![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest4.jpg)
+![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest4.png)
 
 
 
 # My other project
 
-- 网络速度测试 ：https://github.com/sirpdboy/NetSpeedTest
+- 路由安全看门狗 ：https://github.com/sirpdboy/luci-app-watchdog
+  
+- 网络速度测试 ：https://github.com/sirpdboy/luci-app-netspeedtest
 
-- 定时设置插件 : https://github.com/sirpdboy/luci-app-autotimeset
+- 计划任务插件（原定时设置） : https://github.com/sirpdboy/luci-app-taskplan
 
 - 关机功能插件 : https://github.com/sirpdboy/luci-app-poweroffdevice
 
 - opentopd主题 : https://github.com/sirpdboy/luci-theme-opentopd
 
-- kucat 主题: https://github.com/sirpdboy/luci-theme-kucat
+- kucat酷猫主题: https://github.com/sirpdboy/luci-theme-kucat
+
+- kucat酷猫主题设置工具: https://github.com/sirpdboy/luci-app-kucat-config
+
+- NFT版上网时间控制插件: https://github.com/sirpdboy/luci-app-timecontrol
 
 - 家长控制: https://github.com/sirpdboy/luci-theme-parentcontrol
+
+- 定时限速: https://github.com/sirpdboy/luci-app-eqosplus
 
 - 系统高级设置 : https://github.com/sirpdboy/luci-app-advanced
 
@@ -147,9 +161,9 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 
 - 进阶设置（系统高级设置+主题设置kucat/agron/opentopd）: https://github.com/sirpdboy/luci-app-advancedplus
 
-- 设置向导: https://github.com/sirpdboy/luci-app-wizard
+- 网络设置向导: https://github.com/sirpdboy/luci-app-netwizard
 
-- 分区扩容: https://github.com/sirpdboy/luci-app-partexp
+- 一键分区扩容: https://github.com/sirpdboy/luci-app-partexp
 
 - lukcy大吉: https://github.com/sirpdboy/luci-app-lukcy
 
