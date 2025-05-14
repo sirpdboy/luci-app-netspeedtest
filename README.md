@@ -115,6 +115,8 @@ luci-app-netspeedtest 网络速度诊断测试（包括：内网网页版测速�
 
 ## 界面
 
+![screenshots](./演示.gif)
+
 ![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest1.jpg)
 
 ![screenshots](https://raw.githubusercontent.com/sirpdboy/openwrt/master/doc/netspeedtest2.jpg)
