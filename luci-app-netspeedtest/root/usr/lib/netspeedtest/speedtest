@@ -5,7 +5,6 @@ SPEEDTEST_CLI='/usr/bin/speedtest'
 SPEEDTEST_RESULT='/tmp/speedtest_result'
 LOG='/tmp/netspeedtest.log'
 
-echo "config netspeedtest 'config'" > /etc/config/netspeedtest
 # 记录开始时间
 echo "=== Speedtest started at $(date) ===" >> "$LOG"
 
