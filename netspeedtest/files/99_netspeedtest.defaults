@@ -1,9 +1,6 @@
 #!/bin/sh
-[ ! -s "/etc/config/netspeedtest" ] && {
-touch /etc/config/netspeedtest
+: > /etc/config/netspeedtest
 uci -q batch <<-EOF >/dev/null
 	set netspeedtest.config=netspeedtest
 	commit netspeedtest
 EOF
-
-}
